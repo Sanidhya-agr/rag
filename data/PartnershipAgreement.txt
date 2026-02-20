@@ -1,0 +1,192 @@
+Partnership Agreement
+USING THIS AGREEMENT
+This Agreement has 2 parts: (1) this Cover Page, which includes Business Terms and legal Key Terms, and (2) the Common Paper Partnership Standard Terms Version 1.1 posted at commonpaper.com/standards/partnership-agreement/1.1, which is incorporated by reference. If there is any inconsistency between the parts of the Agreement, the Cover Page will control over the Standard Terms. Variables have the meanings or descriptions given on the Cover Page. However, if the Cover Page omits or does not define a Variable, the default meaning will be “none” or “not applicable” and the correlating clause, sentence, or section does not apply to this Agreement. All other capitalized words have the meanings or descriptions given in the Standard Terms. A copy of the Standard Terms is attached for convenience only.	
+Business Terms
+The key business terms of this Agreement are as follows:	
+Obligations	[Drafting note: Choose at least one. Use to add details about the partnership.]
+
+Company will:
+[    ]	Engage in the following promotional activities: [____]
+[    ]	Provide the following promotional materials: [____]
+[    ]	Provide the following sponsored benefits: [____]
+[    ]	Make Referrals to Partner. A “Referral” to Partner is a third party that meets all the following criteria: [____]
+[    ]	Pay Partner the following amount according to the Payment Schedule: [____]
+[    ]	Provide Company’s Brand Elements as Licensor
+
+Partner will:
+[    ]	Engage in the following promotional activities: [____]
+[    ]	Provide the following promotional materials: [____]
+[    ]	Provide the following sponsored benefits: [____]
+[    ]	Make Referrals to Company. A “Referral” to Company is a third party that meets all the following criteria: [____]
+[    ]	Pay Company the following amount according to the Payment Schedule: [____]
+[    ]	Provide Partner’s Brand Elements as Licensor
+Territory	[Drafting note: Choose one to specify where the partnership activities will occur.]
+
+[ x ]	Worldwide
+[    ]	[fill in specific geographic areas]
+Payment Process	[Drafting note: Optional Variable. If there are Fees included as part of Obligations, specify where to send invoices and fees, e.g., the specific person or email address.]
+
+[    ]	Company will send invoices or bills for Fees owed by Partner to: [___]
+[    ]	Partner will send invoices or bills for Fees owed by Company to: [___]
+Payment Schedule	[Drafting note: If there are Fees included as part of Obligations, this Variable is required.]
+
+[    ]	The party making payment will pay the other party according to the following schedule: [Fill in payment schedule, e.g., 30 days from receipt of invoice, 60 days before event, etc.]
+End Date
+When this Agreement ends	[Drafting note: Select when the partnership will end. Choose and customize one and delete the other]
+
+[ x ]	[ # ] [days, weeks, months, year] after the Effective Date
+[    ]	[fill in custom end date]
+Key Terms
+The key legal terms of this Agreement are as follows:	
+Effective Date
+The date the Agreement starts	[Drafting note: Choose one and delete the other.]
+
+[ x ]	Date of last signature on this Cover Page
+[    ]	[Fill in custom Effective Date]	
+Governing Law	The laws of [fill in state and/or country]	
+Chosen Courts
+Jurisdiction or where disputes are filed	The courts (whether state, federal, or otherwise) located in [fill in state and/or county]	
+Covered Claims
+Claims covered by indemnity obligations	[Drafting note: Optional variable. Customize as appropriate. If no Covered Claims are included, delete this entire row.]
+
+[    ]	Company Covered Claim(s): Any action, suit, proceeding, or claim that arises out of or relates to [(a) Company's gross negligence or willful misconduct; or (b) Company's breach or alleged breach of its representations and warranties in Section 7, including the intellectual property representations or warranties.]
+
+[    ]	Partner Covered Claim(s): Any action, suit, proceeding, or claim that arises out of or relates to [(a) Partner's gross negligence or willful misconduct; or (b) Partner's breach or alleged breach of its representations and warranties in Section 7, including the intellectual property representations or warranties.]	
+General Cap Amount
+Limitation of liability amount for most claims	[Drafting note: Optional variable. Choose one and delete the others. If there is no General Cap Amount, delete this entire row and the Agreement will not have a limitation of liability.]
+
+[    ]	[Fill in a number] times the fees paid or payable under the Agreement in the 12 month period immediately before the claim
+[    ]	$[Fill in dollar amount]
+[    ]	The greater of $[fill in dollar amount] or [fill in a number] times the fees paid or payable under the Agreement in the 12 month period immediately before the claim	
+Increased Claims
+Specific claims covered by the Increased Cap Amount	[Drafting note: Optional variable. Choose those that apply and delete the rest. If no Increased Claims are included, delete this entire row and the Increased Cap Amount row.]
+
+[    ]	Breach of Section 11 (Confidentiality)
+[    ]	An Indemnifying Party’s indemnification obligations for its Covered Claims
+[    ]	Breach of Section 11 (Confidentiality) resulting from gross negligence or willful misconduct
+[    ]	Claims resulting from a party's gross negligence or willful misconduct
+[    ]	Other: [fill in]	
+Increased Cap Amount
+Higher limitation of liability amount for Increased Claims, often called a supercap	[Drafting note: If Increased Claims are included, customize as appropriate. If no Increased Claims are included, delete this entire row.]
+
+[    ]	[Fill in a number other than 1] times the fees paid or payable under the Agreement in the 12 month period immediately before the claim
+[    ]	$[Fill in dollar amount]
+[    ]	The greater of $[fill in dollar amount] or [fill in a number]x the fees paid or payable under the Agreement in the 12 month period immediately before the claim	
+Unlimited Claims
+Claims excluded from any liability cap	[Drafting note: Optional variable. Choose those that apply and delete the rest. If no Unlimited Claims are included, delete this entire row.]
+
+[    ]	An Indemnifying Party’s indemnification obligations for its Covered Claims
+[    ]	Breach of Section 11 (Confidentiality)
+[    ]	Breach of Section 11 (Confidentiality) resulting from gross negligence or willful misconduct
+[    ]	Claims resulting from a party's gross negligence or willful misconduct
+[    ]	Other: [fill in]	
+Additional Warranties	[Drafting note: Optional variable. Customize as appropriate. If no Additional Warranties are included, delete this entire row.]
+
+[    ]	By Company: [fill in]
+[    ]	By Partner: [fill in]	
+Attachments and Supplements	
+DPA
+Data Protection Agreement	[Drafting note: Optional variable. If there is no DPA, delete this entire row.]
+
+[ If required by law or appropriate for the Obligations, attach or describe where to find. ]	
+Brand Guidelines	[Drafting note: Optional variable. Choose and customize as applicable. If no Brand Guidelines are included, delete this entire row.]
+
+[    ]	Company Brand Guidelines [attach or describe where to find]
+[    ]	Partner Brand Guidelines [attach or describe where to find]	
+Changes to Standard Terms
+[Drafting note: Optional section. If no changes to the Standard Terms, delete this entire section.]	
+Changes to Standard Terms
+List specific changes to the Standard Terms	[Fill in]	
+
+Company and Partner have not changed the Standard Terms except for the details in the Cover Page above. By signing this Cover Page, each party agrees to enter the Agreement as of the Effective Date.
+	COMPANY: [official company name]		PARTNER: [official company name]
+Signature			
+Print Name			
+Title			
+Notice Address
+Use email or postal address			
+Date			
+1. Cooperation
+1.1 Obligations.  Each party will perform its Obligations as detailed in the Cover Page.
+1.2 Feedback.  Each party may, but is not required to, give Feedback to the other party. All Feedback is given “AS IS”. The party receiving Feedback may use it freely without any restriction or obligation.
+2. Payment & Taxes
+2.1 If the Obligations include payment of Fees from one party to the other, the following terms apply:
+(a) Fees and Billing.  Unless the Cover Page specifies a different currency, all Fees are in U.S. Dollars and are exclusive of taxes. Except for the prorated refund of prepaid Fees, Fees are non-refundable. The party receiving payment will bill or invoice the other party for Fees according to the Payment Process. 
+(b) Payment.  The paying party will pay the other party its applicable Fees and related taxes in U.S. Dollars, unless the Cover Page specifies a different currency, according to the Payment Schedule. 
+(c) Taxes.  The paying party is responsible for all duties, taxes, and levies that apply to Fees, including sales, use, VAT, GST, or withholding. However, the paying party is not responsible for the other party’s income taxes.
+3. Trademark License
+3.1 Trademark License.  Licensor grants to Licensee during the term of the Agreement a non-exclusive, non-transferrable, non-sublicensable, revocable, royalty-free, limited right and license in the Territory to use the Licensor’s Brand Elements solely as necessary for Licensee to perform its Obligations, and only in accordance with the terms of the Agreement and any Brand Guidelines provided by Licensor. 
+3.2 Reservation of Rights.  Licensee acknowledges that as between Licensee and Licensor, Licensor is the sole and exclusive owner of all right, title, and interest in and to the Brand Elements. Except for the limited license in Section 3.1 (Trademark License), neither party transfers any rights in any of its products, data, or any other intellectual property. All rights not expressly granted in this Agreement are retained by Licensor. All goodwill in the Brand Elements resulting from Licensee’s use will inure to the benefit of Licensor.
+3.3 Restrictions on Licensee.  Licensee will not (and will not allow anyone else to), except with Licensor's prior written permission: (a) alter or modify the Brand Elements or combine them with any other trademark, service mark, or logo; (b) use the Brand Elements in a way that implies endorsement or engagement beyond the scope of the Agreement except as required to fulfill the Obligations or to identify the parties’ relationship under this Agreement; or (c) use the Brand Elements in any context that might harm Licensor’s reputation or the goodwill associated with the Brand Elements or is inconsistent with Licensor’s mission and values. In addition, each Licensee will promptly cease any use of the Licensor’s Brand Elements upon written notice from Licensor.
+3.4 Samples and Approvals.  Licensor has the right to inspect and approve all uses of the Brand Elements at any time. If requested by Licensor, Licensee will submit samples of its proposed uses of the Brand Elements to Licensor for prior written approval. 
+4. Privacy
+4.1 If the parties have a DPA, each party will comply with its obligations in the DPA, the terms of the DPA will control each party’s rights and obligations as to Personal Data, and the terms of the DPA will control in the event of any conflict with this Agreement.  
+5. Escalation Procedure
+5.1 Each party agrees to give the other party written notice of specific issue(s) in dispute about the Agreement, including good faith disagreements about the amounts charged on a bill or invoice, prior to seeking any form of legal relief. Within 30 days after receipt of notice, at least one knowledgeable representative from each party will hold at least one meeting for the purpose of attempting in good faith to resolve the dispute. The parties agree to maintain the confidential nature of all disputes and disagreements between them as Confidential Information, including informal negotiations, mediation, or arbitration, except as may be necessary to prepare for or conduct these dispute resolution procedures or unless otherwise required by law or judicial decision.
+6. Term & Termination
+6.1 Term.  This Agreement starts on the Effective Date and continues until the End Date, unless earlier terminated as provided below.
+6.2 Termination.  Either party may terminate the Agreement immediately:
+(a) if the other party fails to cure a material breach of the Agreement upon 30 days notice;
+(b) if the other party fails to cure a breach of Section 3.3(c) upon 5 days notice; or 
+(c) upon notice if the other party (i) materially breaches the Agreement in a manner that cannot be cured; (ii) dissolves or stops conducting business without a successor; (iii) makes an assignment for the benefit of creditors; or (iv) becomes the debtor in insolvency, receivership, or bankruptcy proceedings that continue for more than 60 days.
+6.3 Force Majeure.  Either party may terminate the Agreement immediately on notice if a Force Majeure Event prevents either party from performing its Obligations for 30 or more consecutive days. However, this section does not excuse a party’s obligations to pay Fees.
+6.4 Effect of Termination.  Upon any expiration or termination:
+(a) All rights of Licensee under Section 3 (Trademark License) will immediately terminate and revert to Licensor. Licensee will immediately cease all uses of Licensor's Brand Elements.
+(b) Each Recipient will return or destroy Discloser’s Confidential Information in its possession or control. However, each Recipient may retain Discloser’s Confidential Information in accordance with its standard backup or record retention policies maintained in the ordinary course of business or as required by Applicable Laws, in which case Section 4 (Privacy) and Section 11 (Confidentiality) will continue to apply to retained Confidential Information.
+(c) If a party terminates the Agreement pursuant to Section 6.2, the party receiving payment will, as applicable, either (i) submit a final bill for all outstanding Fees accrued before termination, and the paying party will pay according to Section 2 (Payment & Fees), or (ii) issue a refund for any unearned, prepaid Fees.
+6.5 Survival. The following sections will survive expiration or termination of the Agreement: Section 2 (Payment & Taxes) for fees accrued or payable before expiration or termination, Section 3.2 (Reservation of Rights), Section 3.3 (Restrictions on Licensee), Section 6.4 (Effect of Termination), Section 6.5 (Survival), Section 7 (Representations & Warranties), Section 8 (Disclaimer of Warranties), Section 9 (Limitation of Liability), Section 10 (Indemnification), Section 11 (Confidentiality), Section 12 (General Terms), Section 13 (Definitions), and the portions of the Cover Page referenced by these sections.
+7. Representations & Warranties
+7.1 Each party represents and warrants to the other that: (a) it has the legal power and authority to enter into this Agreement and perform its Obligations; (b) it is duly organized, validly existing, and in good standing under the Applicable Laws of the jurisdiction of its origin; (c) it will comply with all Applicable Laws in performing its obligations or exercising its rights in this Agreement; (d) it has all necessary rights under its Applicable Laws to collect and share any Personal Data it may collect or share under this Agreement; (e) its Brand Elements do not and will not infringe the copyright, trademark, right of publicity, or other proprietary rights of any third party; and (f) it will comply with its Additional Warranties.
+8. Disclaimer of Warranties
+8.1 Except for the warranties in Section 7 (Representations & Warranties), Company and Partner each disclaim all other warranties, whether express or implied, including the implied warranties of merchantability, fitness for a particular purpose, and title. These disclaimers apply to the maximum extent permitted by Applicable Laws.
+9. Limitation of Liability
+9.1 Liability Caps.  
+(a) Except as provided in Section 9.3, each party’s total cumulative liability for all claims arising out of or relating to this Agreement will not be more than the General Cap Amount. 
+(b) If there are Increased Claims, each party’s total cumulative liability for the Increased Claims arising out of or relating to this Agreement will not be more than the Increased Cap Amount.
+9.2 Damages Waiver.  Except as provided in Section 9.3, under no circumstances will either party be liable to the other for lost profits or revenues, or for consequential, special, indirect, exemplary, punitive, or incidental damages relating to this Agreement, even if the party is informed of the possibility of this type of damage in advance.
+9.3 Exceptions.  The liability cap in Section 9.1(a) does not apply to any Increased Claims. The liability caps in Section 9.1 do not apply to any Unlimited Claims. The damages waiver in Section 9.2 does not apply to any Increased Claims or a breach of Section 11 (Confidentiality). Nothing in this Agreement will limit a party's liability to the extent prohibited by Applicable Laws.
+10. Indemnification
+10.1 Protection by Company.  Company will indemnify, defend, and hold harmless Partner from and against all Company Covered Claims made by someone other than Partner or its Affiliates, and all out-of-pocket damages, awards, settlements, costs, and expenses, including reasonable attorneys’ fees and other legal expenses, that arise from the Company Covered Claim.
+10.2 Protection by Partner.  Partner will indemnify, defend, and hold harmless Company from and against all Partner Covered Claims made by someone other than Company or its Affiliates, and all out-of-pocket damages, awards, settlements, costs, and expenses, including reasonable attorneys’ fees and other legal expenses, that arise from the Partner Covered Claim.
+10.3 Procedure.  The Indemnifying Party’s obligations in this section are contingent upon the Protected Party: (a) promptly notifying the Indemnifying Party of each Covered Claim for which it seeks protection; (b) providing reasonable assistance to the Indemnifying Party at the Indemnifying Party’s expense; and (c) giving the Indemnifying Party sole control over the defense and settlement of each Covered Claim. A Protected Party may participate in a Covered Claim for which it seeks protection with its own attorneys only at its own expense. The Indemnifying Party may not agree to any settlement of a Covered Claim that contains an admission of fault or otherwise materially and adversely impacts the Protected Party without the prior written consent of the Protected Party. 
+10.4 Exclusive Remedy.  This Section 10 (Indemnification) describes each Protected Party’s exclusive remedy and each Indemnifying Party’s entire liability for a Covered Claim.
+11. Confidentiality
+11.1 Non-Use and Non-Disclosure.  Unless otherwise authorized in the Agreement or except to fulfill its obligations or exercise its rights under this Agreement, Recipient will not (a) use Discloser’s Confidential Information; nor (b) disclose Discloser’s Confidential Information to anyone else. In addition, Recipient will protect Discloser’s Confidential Information using at least the same protections Recipient uses for its own similar information but no less than a reasonable standard of care.
+11.2 Exclusions.  Confidential Information does not include information that (a) Recipient knew without any obligation of confidentiality before disclosure by Discloser; (b) is or becomes publicly known and generally available through no fault of Recipient; (c) Recipient receives under no obligation of confidentiality from someone else who is authorized to make the disclosure; or (d) Recipient independently developed without use of or reference to Discloser’s Confidential Information. 
+11.3 Required Disclosures.  Recipient may disclose Discloser’s Confidential Information to the extent required by Applicable Laws if, unless prohibited by Applicable Laws, Recipient provides the Discloser reasonable advance notice of the required disclosure and reasonably cooperates, at the Discloser’s expense, with the Discloser’s efforts to obtain confidential treatment for the Confidential Information. 
+11.4 Permitted Disclosures.  Recipient may disclose Discloser’s Confidential Information to employees, advisors, contractors, and representatives who each have a need to know the Confidential Information, but only if the person or entity is bound by confidentiality obligations at least as protective as those in this Section 11. Recipient agrees to be fully responsible for such person’s or entity’s compliance with the terms of this Section 11.
+12. General Terms
+12.1 Entire Agreement.  This Agreement is the only agreement between the parties about its subject and supersedes all prior or contemporaneous statements (whether in writing or not) about its subject. 
+12.2 Modifications, Severability, and Waiver.  Any waiver, modification, or change to the Agreement must be in writing and signed by each party. If any term of this Agreement is determined to be invalid or unenforceable by a relevant court or governing body, the remaining terms of this Agreement will remain in full force and effect. The failure of a party to enforce a term or to exercise an option or right in this Agreement will not constitute a waiver by that party of the term, option, or right.
+12.3 Governing Law and Chosen Courts.  The Governing Law will govern all interpretations and disputes about this Agreement, without regard to its conflict of laws provisions. The parties will bring any legal suit, action, or proceeding about this Agreement in the Chosen Courts and each party irrevocably submits to the exclusive jurisdiction of the Chosen Courts.
+12.4 Injunctive Relief.  Despite Section 5 (Escalation Procedure) and Section 12.3 (Governing Law and Chosen Courts), a breach of Section 11 (Confidentiality) or the violation of a party’s intellectual property rights may cause irreparable harm for which monetary damages cannot adequately compensate. As a result, upon the actual or threatened breach of Section 11 (Confidentiality) or violation of a party’s intellectual property rights, the non-breaching or non-violating party may seek appropriate equitable relief, including an injunction, in any court of competent jurisdiction without the need to post a bond and without limiting its other rights or remedies.
+12.5 Non-Exhaustive Remedies.  Except where the Agreement provides for an exclusive remedy, seeking or exercising a remedy does not limit the other rights or remedies available to a party.
+12.6 Assignment.  Neither party may assign any rights or obligations under this Agreement without the prior written consent of the other party. Any attempted but non-permitted assignment is void. This Agreement will be binding upon and inure to the benefit of the parties and their permitted successors and assigns.
+12.7 Notices.  Any notice, request, or approval about the Agreement must be in writing and sent to the Notice Address. Notices will be deemed given (a) upon confirmed delivery if by email, registered or certified mail, or personal delivery; or (b) two days after mailing if by overnight commercial delivery.
+12.8 Independent Contractors.  The parties are independent contractors, not agents, partners, or joint venturers. Neither party is authorized to bind the other to any liability or obligation. 
+12.9 No Third-Party Beneficiary.  There are no third-party beneficiaries of this Agreement.
+12.10 Force Majeure.  Neither party will be liable for a delay or failure to perform its obligations under this Agreement if caused by a Force Majeure Event. However, this section does not excuse a party’s obligations to pay Fees. 
+12.11 Anti-Bribery.  Neither party will take any action that would be a violation of any Applicable Laws that prohibit the offering, giving, promising to offer or give, or receiving, directly or indirectly, money or anything of value to any third party to assist either party in retaining or obtaining business. Examples of these kinds of laws include the U.S. Foreign Corrupt Practices Act and the UK Bribery Act 2010.
+12.12 Titles and Interpretation.  Section titles are for convenience and reference only. All uses of “including” and similar phrases are non-exhaustive and without limitation.
+12.13 Signature.  This Agreement may be signed in counterparts, including by electronic signature. Each copy will be deemed an original, and all copies, when taken together, will be the same agreement.
+13. Definitions
+13.1 Defining Variables. Variables have the meanings or descriptions given on a Cover Page. However, if the Cover Page omits or does not define a Variable, the default meaning will be “none” or “not applicable” and the correlating clause, sentence, or section does not apply to the Agreement. 
+13.2 “Affiliate” means an entity that, directly or indirectly, controls, is under the control of, or is under common control with a party, where control means having more than fifty percent (50%) of the voting stock or other ownership interest.
+13.3 “Agreement” means the Cover Page between Company and Partner that incorporates these Standard Terms and any policies and documents referenced in or attached to the Cover Page.
+13.4 “Applicable Laws” means the laws, rules, regulations, court orders, and other binding requirements of a relevant government authority that govern a party’s activities.
+13.5 “Brand Elements” means a party’s trademarks, service marks, names, and logos. Brand Elements also include works of authorship such as marketing materials, images, documentation, collateral, or case studies that a party provides to the other party for use in connection with this Agreement.
+13.6 “Confidential Information” means information in any form disclosed by or on behalf of a Discloser, including before the Effective Date, to a Recipient in connection with this Agreement that (a) the Discloser identifies as “confidential”, “proprietary”, or the like; or (b) should be reasonably understood as confidential or proprietary due to its nature and the circumstances of its disclosure. Confidential Information includes the existence of this Agreement and the information on a Cover Page. 
+13.7 “Cover Page” means a document that is signed by the parties, identifies Company and Partner, incorporates these Standard Terms, and includes definitions or descriptions for Variables.
+13.8 “Covered Claim” means either a Company Covered Claim or Partner Covered Claim.
+13.9 “Discloser” means a party to this Agreement when the party is providing or disclosing Confidential Information to the other party.
+13.10 "Feedback" means suggestions, feedback, or comments made by one party about the other party's products, services, or related offerings.
+13.11 “Fees” means the amounts described in a Cover Page that one party owes to the other party, as applicable.
+13.12 “Force Majeure Event” means an unforeseen event outside a party’s reasonable control where the affected party took reasonable measures to avoid or mitigate the impacts of the event. Examples of these kinds of events include unpredicted natural disasters like a major earthquake or pandemic; war, riot, or act of terrorism; or public utility or internet failure.
+13.13 “Indemnifying Party” means a party to this Agreement when the party is providing protection for a particular Covered Claim.
+13.14 “Licensor” means Company or Partner, as applicable, when it is providing Brand Elements to the other party as part of marketing activities under this Agreement.
+13.15 “Licensee” means Company or Partner, as applicable, when it is receiving Brand Elements from the other party to perform its Obligations for marketing activities under this Agreement.
+13.16 “Personal Data” has the meaning(s) set forth in the Applicable Laws regarding how a company must protect personal information, personal data, personally identifiable information, or other similar term.
+13.17 “Protected Party” means a party to this Agreement when the party is receiving the benefit of protection for a particular Covered Claim.
+13.18 “Recipient” means a party to this Agreement when the party receives Confidential Information from the other party.
+13.19 "Standard Terms" means these Common Paper Partnership Standard Terms Version 1.1, which are posted at commonpaper.com/standards/partnership-agreement/1.1.
+13.20 "Variable" means a word or phrase in the Standard Terms that is highlighted and capitalized, such as Obligations or Governing Law.

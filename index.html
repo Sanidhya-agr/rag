@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Legal Contract Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+    h1 { color: #2c3e50; }
+    textarea { width: 100%; height: 100px; padding: 10px; font-size: 15px; border: 1px solid #ccc; border-radius: 6px; resize: vertical; }
+    button { margin-top: 12px; padding: 10px 24px; background: #2c3e50; color: white; border: none; border-radius: 6px; font-size: 15px; cursor: pointer; }
+    button:hover { background: #34495e; }
+    #output-box { margin-top: 24px; background: white; border: 1px solid #ddd; border-radius: 6px; padding: 20px; white-space: pre-wrap; font-size: 14px; min-height: 100px; }
+    #error { color: red; margin-top: 10px; }
+    #loading { color: #888; margin-top: 10px; display: none; }
+  </style>
+</head>
+<body>
+  <h1>Legal Contract Generator</h1>
+  <p>Describe the contract you need and click <strong>Generate</strong>.</p>
+
+  <textarea id="description" placeholder="e.g. I want to sign an NDA with a business partner in California"></textarea>
+  <br/>
+  <button onclick="generate()">Generate Contract</button>
+  <div id="loading">⏳ Generating contract, please wait...</div>
+  <div id="error"></div>
+  <div id="output-box">Your contract will appear here...</div>
+
+  <script>
+    const API_URL = "http://localhost:8000/generate-contract";
+
+    async function generate() {
+      const description = document.getElementById("description").value.trim();
+      const outputBox = document.getElementById("output-box");
+      const errorDiv = document.getElementById("error");
+      const loading = document.getElementById("loading");
+
+      errorDiv.textContent = "";
+      outputBox.textContent = "";
+
+      if (!description) {
+        errorDiv.textContent = "Please enter a description.";
+        return;
+      }
+
+      loading.style.display = "block";
+
+      try {
+        // Send JSON to the API
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ description: description })   // <-- JSON input
+        });
+
+        // Parse JSON response
+        const data = await response.json();                    // <-- JSON output
+
+        if (!response.ok) {
+          errorDiv.textContent = "Error: " + (data.detail || "Something went wrong.");
+          return;
+        }
+
+        // Display the contract
+        outputBox.textContent = data.contract;
+
+      } catch (err) {
+        errorDiv.textContent = "Could not reach the API. Make sure the server is running on localhost:8000.";
+      } finally {
+        loading.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
