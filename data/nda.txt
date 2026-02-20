@@ -55,13 +55,13 @@ Use either email or postal address
 
 Date
 
-Common Paper Mutual Non-Disclosure Agreement (Version 1.0) free to use under CC BY 4.0.
+
 
 PARTY 2
 
 STANDARD TERMS
 
-STANDARD TERMS
+
 
 1. Introduction. This Mutual Non-Disclosure Agreement (which incorporates these Standard Terms and the Cover Page (defined below))
 (“MNDA”) allows each party (“Disclosing Party”) to disclose or make available information in connection with the Purpose which (1) the
@@ -117,4 +117,3 @@ amended, modified, waived, or supplemented by an agreement in writing signed by 
 MNDA must be sent in writing to the email or postal addresses on the Cover Page and are deemed delivered on receipt. This MNDA may be
 executed in counterparts, including electronic copies, each of which is deemed an original and which together form the same agreement.
 
-Common Paper Mutual Non-Disclosure Agreement (Version 1.0) free to use under CC BY 4.0.

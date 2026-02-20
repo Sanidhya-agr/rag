@@ -3,6 +3,7 @@ import openai
 from openai import OpenAI
 from retrieval import retrieve
 from prompts import build_prompt
+from extractor import extract_entities
 
 client = OpenAI()
 
@@ -40,40 +41,53 @@ def _maybe_log_prompt(prompt, template_file, template_len, law_len):
     print("--- LLM INPUT DEBUG END ---\n")
 
 def generate_contract(user_input):
-    # Retrieve relevant chunks (more results = more law context for the LLM)
+    # Step 1: Extract structured entities from the user's natural language
+    entities = extract_entities(user_input)
+
+    # Step 2: Retrieve relevant chunks (more results = more law context)
     docs, metas, distances = retrieve(user_input, n_results=10)
 
     # Separate templates and laws
     template_chunks = [d for d, m in zip(docs, metas) if m['source'] == 'template']
     law_chunks = [d for d, m in zip(docs, metas) if m['source'] == 'law']
 
-    # Send the full template (all terms) to the LLM whenever a file is retrieved
+    # Step 3: Load the full template file based on retrieval or contract_type
     template_file = _first_template_file(metas) or _first_file_any(metas)
-    # Fallback: if no template found but query is clearly NDA-related, force nda.txt
+    contract_type = entities.get("contract_type", "")
     q_lower = user_input.lower()
-    if not template_file and ("nda" in q_lower or "non-disclosure" in q_lower or "nondisclosure" in q_lower or "confidential" in q_lower):
+    if not template_file and (contract_type == "nda" or "nda" in q_lower or "non-disclosure" in q_lower or "confidential" in q_lower):
         template_file = "nda.txt"
+    elif not template_file and (contract_type == "partnership" or "partnership" in q_lower):
+        template_file = "PartnershipAgreement.txt"
+    elif not template_file and (contract_type == "services" or "service" in q_lower):
+        template_file = "ProfessionalServicesAgreement.txt"
     if template_file:
         full_template = _load_full_template(os.path.join("data", template_file))
         if full_template:
             template_chunks = [full_template]
 
-    # Build the prompt
-    prompt = build_prompt(user_input, template_chunks, law_chunks)
+    # Step 4: Build the prompt with entities for reliable placeholder substitution
+    prompt = build_prompt(user_input, template_chunks, law_chunks, entities=entities)
 
-    # Debug: always log prompt and metadata for transparency
-    # _maybe_log_prompt(
-    #     prompt,
-    #     template_file=template_file,
-    #     template_len=len(template_chunks[0]) if template_chunks else 0,
-    #     law_len=sum(len(c) for c in law_chunks) if law_chunks else 0,
-    # )
+    # Debug: log full prompt to terminal
+    _maybe_log_prompt(
+        prompt,
+        template_file=template_file,
+        template_len=len(template_chunks[0]) if template_chunks else 0,
+        law_len=sum(len(c) for c in law_chunks) if law_chunks else 0,
+    )
 
     # Call OpenAI using the new client syntax
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": "You must reproduce the ENTIRE template verbatim. Do NOT skip, summarize, or reference external URLs for the Standard Terms section — copy it in full."},
+            {"role": "system", "content": (
+                "You are completing a legal contract template. "
+                "You MUST replace ALL placeholders with the extracted details provided. "
+                "This includes section headings — 'PARTY 1' must be replaced with the actual Party 1 name, "
+                "'PARTY 2' with the actual Party 2 name. "
+                "Reproduce the entire template verbatim otherwise. Do not skip any section."
+            )},
             {"role": "user", "content": prompt}
         ],
         temperature=0.0,

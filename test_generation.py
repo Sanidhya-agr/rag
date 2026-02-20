@@ -1,10 +1,9 @@
 from generation import generate_contract
 
 test_inputs = [
-    
-   " I want to generate a Non-Disclosure Agreement (NDA), between manish (Party A) and deepak (Party B), with the following terms: i want to sign an nda with san for 2 years."
-]
-
+  """Partnership between Manish and Deepak for 2 years in India. 
+Manish will engage in promotional activities on social media. 
+Deepak will pay Manish ₹50,000 per month. Governing law: India."""]
 for inp in test_inputs:
     print(f"\n>>> Input: {inp}")
     print("-" * 50)
