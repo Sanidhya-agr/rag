@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from generation import generate_contract
 import traceback
@@ -31,10 +32,6 @@ class ContractRequest(BaseModel):
     description: str
 
 
-class ContractResponse(BaseModel):
-    contract: str
-
-
 # ── Debug middleware: logs every incoming request ──────────────────────────────
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
@@ -52,18 +49,21 @@ async def log_requests(request: Request, call_next):
 
 @app.get("/")
 def root():
-    
     return {"message": "Legal Contract Generator API is running. POST to /generate"}
 
 
-@app.post("/generate", response_model=ContractResponse)
+@app.post("/generate")
 def generate(request: ContractRequest):
     log.info(f"[generate] description = {request.description!r}")
     if not request.description.strip():
         raise HTTPException(status_code=400, detail="description cannot be empty")
     try:
-        result = generate_contract(request.description)
-        return ContractResponse(contract=result)
+        # generate_contract is now a generator — stream chunks to the client
+        def stream():
+            for chunk in generate_contract(request.description):
+                yield chunk
+
+        return StreamingResponse(stream(), media_type="text/plain; charset=utf-8")
     except Exception as e:
         log.error(f"[ERROR] {e}")
         traceback.print_exc()

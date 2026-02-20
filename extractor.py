@@ -3,61 +3,11 @@ from openai import OpenAI
 
 client = OpenAI()
 
-# Schema for structured entity extraction via function calling
-_EXTRACT_TOOL = [{
-    "type": "function",
-    "function": {
-        "name": "extract_contract_entities",
-        "description": "Extract structured details from a user's contract request.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "contract_type": {
-                    "type": "string",
-                    "enum": ["nda", "partnership", "services", "other"],
-                    "description": "The type of contract requested."
-                },
-                "party_1": {
-                    "type": "string",
-                    "description": "Full name of the first party (Party A / Disclosing Party / Company). Empty string if not mentioned."
-                },
-                "party_2": {
-                    "type": "string",
-                    "description": "Full name of the second party (Party B / Receiving Party / Partner). Empty string if not mentioned."
-                },
-                "duration": {
-                    "type": "string",
-                    "description": "Duration or term of the agreement, e.g. '2 years', '6 months'. Empty string if not mentioned."
-                },
-                "purpose": {
-                    "type": "string",
-                    "description": "Purpose or reason for the agreement. Empty string if not mentioned."
-                },
-                "governing_state": {
-                    "type": "string",
-                    "description": "Governing state or country, e.g. 'California', 'India'. Empty string if not mentioned."
-                },
-                "effective_date": {
-                    "type": "string",
-                    "description": "Effective date if explicitly mentioned, e.g. 'January 1, 2025'. Empty string if not mentioned."
-                }
-            },
-            "required": [
-                "contract_type", "party_1", "party_2",
-                "duration", "purpose", "governing_state", "effective_date"
-            ],
-            "additionalProperties": False
-        },
-        "strict": True
-    }
-}]
-
 
 def extract_entities(user_input: str) -> dict:
     """
-    Extract structured contract entities from a natural language description.
-    Returns a dict with keys: contract_type, party_1, party_2, duration,
-    purpose, governing_state, effective_date.
+    Dynamically extract ALL relevant contract details from natural language.
+    Returns a flat dict of whatever fields the LLM finds — no hardcoded schema.
     """
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -65,18 +15,21 @@ def extract_entities(user_input: str) -> dict:
             {
                 "role": "system",
                 "content": (
-                    "You extract structured information from contract requests. "
-                    "Return empty string for any field not clearly mentioned."
+                    "You extract structured information from a contract request. "
+                    "Read the entire input and return a flat JSON object with every relevant detail you find. "
+                    "Use clear, descriptive key names (e.g. party_1, party_2, duration, fee_amount, "
+                    "payment_schedule, territory, obligations_party_1, obligations_party_2, "
+                    "governing_state, effective_date, contract_type, purpose, etc.). "
+                    "Only include keys for information actually present in the input. "
+                    "Do not invent or assume missing details."
                 )
             },
             {"role": "user", "content": user_input}
         ],
-        tools=_EXTRACT_TOOL,
-        tool_choice={"type": "function", "function": {"name": "extract_contract_entities"}},
+        response_format={"type": "json_object"},
         temperature=0.0,
     )
 
-    tool_call = response.choices[0].message.tool_calls[0]
-    entities = json.loads(tool_call.function.arguments)
-    print(f"[extractor] Extracted entities: {entities}")
+    entities = json.loads(response.choices[0].message.content)
+    print(f"[extractor] Extracted entities: {json.dumps(entities, indent=2)}")
     return entities

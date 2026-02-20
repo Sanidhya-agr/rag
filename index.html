@@ -1,74 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Legal Contract Generator</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
-    h1 { color: #2c3e50; }
-    textarea { width: 100%; height: 100px; padding: 10px; font-size: 15px; border: 1px solid #ccc; border-radius: 6px; resize: vertical; }
-    button { margin-top: 12px; padding: 10px 24px; background: #2c3e50; color: white; border: none; border-radius: 6px; font-size: 15px; cursor: pointer; }
-    button:hover { background: #34495e; }
-    #output-box { margin-top: 24px; background: white; border: 1px solid #ddd; border-radius: 6px; padding: 20px; white-space: pre-wrap; font-size: 14px; min-height: 100px; }
-    #error { color: red; margin-top: 10px; }
-    #loading { color: #888; margin-top: 10px; display: none; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 10px 24px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #34495e;
+    }
+
+    button:disabled {
+      background: #95a5a6;
+      cursor: not-allowed;
+    }
+
+    #output-box {
+      margin-top: 24px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 20px;
+      white-space: pre-wrap;
+      font-size: 14px;
+      min-height: 100px;
+    }
+
+    #error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    #status {
+      color: #888;
+      margin-top: 10px;
+      font-style: italic;
+    }
   </style>
 </head>
+
 <body>
   <h1>Legal Contract Generator</h1>
   <p>Describe the contract you need and click <strong>Generate</strong>.</p>
 
-  <textarea id="description" placeholder="e.g. I want to sign an NDA with a business partner in California"></textarea>
-  <br/>
-  <button onclick="generate()">Generate Contract</button>
-  <div id="loading">⏳ Generating contract, please wait...</div>
+  <textarea id="description" placeholder="e.g. I want an NDA between Manish and Deepak for 2 years in India"></textarea>
+  <br />
+  <button id="btn" onclick="generate()">Generate Contract</button>
+  <div id="status"></div>
   <div id="error"></div>
   <div id="output-box">Your contract will appear here...</div>
 
   <script>
-    const API_URL = "http://localhost:8000/generate-contract";
+    const API_URL = "http://localhost:8000/generate";
 
     async function generate() {
       const description = document.getElementById("description").value.trim();
       const outputBox = document.getElementById("output-box");
       const errorDiv = document.getElementById("error");
-      const loading = document.getElementById("loading");
+      const statusDiv = document.getElementById("status");
+      const btn = document.getElementById("btn");
 
       errorDiv.textContent = "";
       outputBox.textContent = "";
+      statusDiv.textContent = "Extracting details...";
+      btn.disabled = true;
 
       if (!description) {
         errorDiv.textContent = "Please enter a description.";
+        btn.disabled = false;
+        statusDiv.textContent = "";
         return;
       }
 
-      loading.style.display = "block";
-
       try {
-        // Send JSON to the API
         const response = await fetch(API_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ description: description })   // <-- JSON input
+          body: JSON.stringify({ description })
         });
 
-        // Parse JSON response
-        const data = await response.json();                    // <-- JSON output
-
         if (!response.ok) {
-          errorDiv.textContent = "Error: " + (data.detail || "Something went wrong.");
+          const err = await response.json();
+          errorDiv.textContent = "Error: " + (err.detail || "Something went wrong.");
           return;
         }
 
-        // Display the contract
-        outputBox.textContent = data.contract;
+        // Read the streamed plain-text response chunk by chunk
+        statusDiv.textContent = "Generating contract...";
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder("utf-8");
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          outputBox.textContent += decoder.decode(value, { stream: true });
+          // Auto-scroll to the bottom as text arrives
+          outputBox.scrollTop = outputBox.scrollHeight;
+        }
+
+        statusDiv.textContent = "Done!";
 
       } catch (err) {
         errorDiv.textContent = "Could not reach the API. Make sure the server is running on localhost:8000.";
       } finally {
-        loading.style.display = "none";
+        btn.disabled = false;
       }
     }
   </script>
 </body>
+
 </html>

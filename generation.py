@@ -1,5 +1,6 @@
 import os
 import openai
+from datetime import date
 from openai import OpenAI
 from retrieval import retrieve
 from prompts import build_prompt
@@ -67,18 +68,19 @@ def generate_contract(user_input):
             template_chunks = [full_template]
 
     # Step 4: Build the prompt with entities for reliable placeholder substitution
-    prompt = build_prompt(user_input, template_chunks, law_chunks, entities=entities)
+    today = date.today().strftime("%B %d, %Y")  # e.g. "February 21, 2026"
+    prompt = build_prompt(user_input, template_chunks, law_chunks, entities=entities, today=today)
 
     # Debug: log full prompt to terminal
-    _maybe_log_prompt(
-        prompt,
-        template_file=template_file,
-        template_len=len(template_chunks[0]) if template_chunks else 0,
-        law_len=sum(len(c) for c in law_chunks) if law_chunks else 0,
-    )
+    # _maybe_log_prompt(
+    #     prompt,
+    #     template_file=template_file,
+    #     template_len=len(template_chunks[0]) if template_chunks else 0,
+    #     law_len=sum(len(c) for c in law_chunks) if law_chunks else 0,
+    # )
 
-    # Call OpenAI using the new client syntax
-    response = client.chat.completions.create(
+    # Call OpenAI with streaming enabled
+    stream = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": (
@@ -92,8 +94,11 @@ def generate_contract(user_input):
         ],
         temperature=0.0,
         max_tokens=16000,
-        )
-    
+        stream=True,
+    )
 
-    # Access the response content using dot notation (also new)
-    return response.choices[0].message.content
+    # Yield each text chunk as it arrives from OpenAI
+    for chunk in stream:
+        delta = chunk.choices[0].delta.content
+        if delta:
+            yield delta
