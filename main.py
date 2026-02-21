@@ -1,9 +1,13 @@
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, JSONResponse
 from pydantic import BaseModel
 from generation import generate_contract
+from contract_scanner import scan_contract
+from risk_assessment import assess_risk
 import traceback
+import json
+import io
 import logging
 
 # Log to both console AND a file called requests.log
@@ -68,6 +72,60 @@ def generate(request: ContractRequest):
         log.error(f"[ERROR] {e}")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/scan")
+async def scan_contract_endpoint(file: UploadFile = File(...)):
+    """Upload a contract (PDF or TXT) → extract clauses via CUAD → return structured JSON."""
+    log.info(f"[scan] Received file: {file.filename}")
+
+    # ── 1. Read uploaded file ──────────────────────────────────────────────────
+    raw_bytes = await file.read()
+    filename = (file.filename or "").lower()
+
+    if filename.endswith(".pdf"):
+        try:
+            import PyPDF2
+            reader = PyPDF2.PdfReader(io.BytesIO(raw_bytes))
+            text = "\n".join(page.extract_text() or "" for page in reader.pages)
+        except Exception as e:
+            log.error(f"[scan] PDF parse error: {e}")
+            raise HTTPException(status_code=400, detail=f"Could not parse PDF: {e}")
+    elif filename.endswith(".txt"):
+        text = raw_bytes.decode("utf-8", errors="replace")
+    else:
+        raise HTTPException(
+            status_code=400,
+            detail="Unsupported file type. Please upload a .pdf or .txt file."
+        )
+
+    if not text.strip():
+        raise HTTPException(status_code=400, detail="Uploaded file is empty.")
+
+    log.info(f"[scan] Extracted {len(text)} chars from {file.filename}")
+
+    # ── 2. CUAD clause extraction ──────────────────────────────────────────────
+    try:
+        extracted = scan_contract(text)
+    except Exception as e:
+        log.error(f"[scan] CUAD extraction error: {e}")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Clause extraction failed: {e}")
+
+    log.info(f"[scan] Extracted {sum(1 for v in extracted.values() if v['found'])} clauses")
+
+    # ── 3. LLM risk assessment (structured JSON) ──────────────────────────────
+    try:
+        risk_report = assess_risk(extracted)
+    except Exception as e:
+        log.error(f"[scan] Risk assessment error: {e}")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Risk assessment failed: {e}")
+
+    log.info(f"[scan] Risk assessment complete — overall: {risk_report.get('overallRisk', '?')}")
+
+    return JSONResponse(content={"clauses": extracted, "risk": risk_report})
+
 
 if __name__ == "__main__":
     import uvicorn

@@ -1,0 +1,41 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+1. PURPOSE
+The parties are evaluating whether to enter into a business relationship with the other party (the "Purpose").
+
+2. EFFECTIVE DATE
+This Agreement is entered into as of February 21, 2026 (the "Effective Date").
+
+3. THE PARTIES
+
+Disclosing Party: Alpha Tech Solutions
+
+Receiving Party: Beta Innovative Systems
+
+4. TERM OF CONFIDENTIALITY
+The Receiving Party’s obligations relating to Confidential Information will survive for 1 year from the date of last disclosure, but in the case of trade secrets, until Confidential Information is no longer considered a trade secret under applicable laws.
+
+5. GOVERNING LAW AND JURISDICTION
+
+Governing Law: The laws of the State of California.
+
+Jurisdiction: The state and federal courts located in San Francisco County.
+
+6. TERMINATION
+Either party may terminate this MNDA for any or no reason upon written notice to the other party.
+
+7. DATA PROTECTION (Added per applicable law)
+The parties shall comply with the Digital Personal Data Protection Act, 2023 (DPDP Act) regarding any personal data shared, including implementing necessary security safeguards and reporting data breaches.
+
+8. SIGNATURES
+
+ALPHA TECH SOLUTIONS
+Signature: ___________________________
+Print Name: Alpha Tech Solutions
+Title: CEO
+Date: February 21, 2026
+
+BETA INNOVATIVE SYSTEMS
+Signature: ___________________________
+Print Name: Beta Innovative Systems
+Title: Managing Director
+Date: February 21, 2026

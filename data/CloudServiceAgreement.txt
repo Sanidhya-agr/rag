@@ -1,0 +1,211 @@
+Cloud Service Agreement – Condensed Version
+
+Order Form Overview
+This Order Form is governed by Framework Terms between Provider and Customer. If conflicts exist, this Order Form prevails.
+
+Cloud Service
+Customer receives access to the described cloud product starting on the Order Date.
+
+Order Date
+Access begins on the date of last signature unless a custom start date is defined.
+
+Subscription Period
+Customer receives access for the specified duration. A pilot period may apply if included.
+
+Pilot Terms
+Pilot access may be free or paid. Certain warranties or liability terms may be modified during the pilot.
+
+Fees
+Customer pays fees according to the pricing structure listed (per user, month, or subscription). Fees may increase at renewal if specified.
+
+Payment Process
+Payments occur via invoice or automatic billing as selected. Invoices must be paid within the defined timeframe.
+
+Auto-Renewal
+The subscription automatically renews unless notice of non-renewal is given before the deadline.
+
+Use Limitations
+Customer must follow any geographic, technical, or usage restrictions defined in the Order Form.
+
+Technical Support
+Provider supplies support according to the agreed support terms or channels.
+
+Service Level Agreement (SLA)
+SLA terms may define uptime targets, response times, and service credits if targets are not met.
+
+Scheduled Downtime
+Maintenance windows or advance notice rules determine downtime exclusions.
+
+Professional Services
+Provider may offer additional services described in a Statement of Work or Order Form.
+
+Framework Terms Structure
+Framework Terms include Key Terms plus Standard Terms incorporated by reference.
+
+Effective Date
+Framework Terms begin on the last signature date unless otherwise stated.
+
+Governing Law and Courts
+The agreement is governed by specified laws and disputes must be filed in chosen courts.
+
+Covered Claims
+Provider covers IP infringement claims relating to the Cloud Service. Customer covers claims relating to Customer Content or misuse.
+
+Liability Caps
+Most claims are limited to a multiple of fees paid within the prior 12 months unless exceptions apply.
+
+Increased Claims
+Privacy or confidentiality breaches may have higher liability limits.
+
+Unlimited Claims
+Indemnification obligations may be excluded from liability caps.
+
+Security Policy
+Provider will use commercially reasonable efforts to protect the Cloud Service from unauthorized access.
+
+Insurance
+Provider may maintain required insurance policies during and after the Subscription Period.
+
+Service Access
+Customer may use the Cloud Service for internal business purposes during the Subscription Period.
+
+Support Obligations
+Provider offers technical support as defined in the Order Form.
+
+User Accounts
+Customer is responsible for user actions and protecting login credentials.
+
+Feedback and Usage Data
+Provider may use feedback and aggregated usage data to improve products.
+
+Customer Content
+Provider may process Customer Content only as needed to operate the service.
+
+Machine Learning
+Aggregated and de-identified data may be used to train AI models. AI outputs may contain errors and require human review.
+
+Restrictions on Customer
+Customer may not reverse engineer, resell, misuse, or attempt unauthorized access to the product.
+
+Suspension Rights
+Provider may suspend access for non-payment, misuse, or violations.
+
+Privacy and Data Protection
+A Data Processing Agreement may apply for personal data handling.
+
+Prohibited Data
+Customer must not upload restricted or sensitive data categories unless permitted.
+
+Fees and Taxes
+Fees are generally non-refundable and exclusive of taxes unless stated otherwise.
+
+Payment Disputes
+Customer must notify Provider promptly of any billing disputes.
+
+Term and Termination
+The Agreement lasts through the Subscription Period and renews automatically unless terminated.
+
+Termination Rights
+Either party may terminate for uncured breaches, insolvency, or legal issues.
+
+Force Majeure
+Either party may terminate if major uncontrollable events prevent service operation for extended periods.
+
+Effect of Termination
+Access ends, Customer Content may be deleted, and final invoices must be paid.
+
+Survival Clauses
+Confidentiality, liability, and payment obligations survive termination.
+
+Representations and Warranties
+Each party confirms legal authority and compliance with laws.
+
+Provider Warranty
+Provider will not materially reduce functionality during the subscription.
+
+Warranty Remedies
+If service fails warranty obligations, Provider must attempt to restore functionality or allow termination with refund.
+
+Disclaimer of Warranties
+Except for stated warranties, services are provided “as is.”
+
+Limitation of Liability
+Liability is capped except for certain specified claims.
+
+Damages Waiver
+Neither party is liable for indirect or consequential damages unless exceptions apply.
+
+Indemnification by Provider
+Provider defends Customer against covered IP claims.
+
+Indemnification by Customer
+Customer defends Provider against claims related to Customer Content or misuse.
+
+Indemnification Procedures
+Claims require prompt notice and cooperation from the protected party.
+
+Confidentiality Obligations
+Both parties must protect confidential information and use reasonable safeguards.
+
+Exceptions to Confidentiality
+Public or independently developed information is not confidential.
+
+Required Disclosures
+Confidential information may be disclosed when required by law with advance notice when possible.
+
+Ownership Rights
+Provider retains rights to the product; Customer retains rights to its content.
+
+Entire Agreement
+This agreement supersedes all prior agreements or communications.
+
+Modifications
+Changes must be in writing and signed by both parties.
+
+Injunctive Relief
+Parties may seek court orders to prevent IP or confidentiality breaches.
+
+Assignment
+Rights may not be assigned without consent except in mergers or asset sales.
+
+Beta Products
+Beta features are experimental and provided without warranties.
+
+Logo Rights
+Provider may use Customer’s name or logo for marketing unless restricted.
+
+Notices
+Legal notices must be sent to specified addresses.
+
+Independent Contractors
+The parties are not partners or agents.
+
+No Third-Party Beneficiaries
+Only the parties have rights under this agreement.
+
+Export Compliance
+Customer must comply with export and sanctions laws.
+
+Anti-Bribery
+Both parties must follow anti-corruption laws.
+
+Definitions
+Defined terms such as Product, User, Customer Content, and Usage Data apply throughout the agreement.
+
+SLA – Uptime
+Provider aims to meet uptime targets measured monthly.
+
+SLA – Response Time
+Provider aims to acknowledge support requests within the defined timeframe.
+
+Service Credits
+If SLA targets are missed, credits may apply to future invoices.
+
+Credit Requests
+Customer must request service credits within specified deadlines.
+
+Credit Limits
+Service credits cannot exceed defined percentages of fees.
+
+SLA Termination Right
+Repeated uptime failures may allow Customer to terminate the Order Form.

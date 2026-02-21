@@ -3,20 +3,74 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Legal Contract Generator</title>
+  <title>Legal Contract Generator & Risk Scanner</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
-      background: #f5f5f5;
+      background: #f0f2f5;
+      color: #1a1a2e;
     }
 
     h1 {
       color: #2c3e50;
+      margin-bottom: 8px;
     }
 
+    p.subtitle {
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    /* ── Tabs ─────────────────────────────────────── */
+    .tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 0;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      background: #e8e8e8;
+      color: #555;
+      cursor: pointer;
+      border-radius: 8px 8px 0 0;
+      transition: background 0.2s;
+    }
+
+    .tab-btn.active {
+      background: #fff;
+      color: #2c3e50;
+      border-bottom: 2px solid #fff;
+      margin-bottom: -1px;
+    }
+
+    .tab-content {
+      display: none;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 0 0 8px 8px;
+      padding: 24px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ── Shared ───────────────────────────────────── */
     textarea {
       width: 100%;
       height: 100px;
@@ -25,10 +79,9 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       resize: vertical;
-      box-sizing: border-box;
     }
 
-    button {
+    .btn {
       margin-top: 12px;
       padding: 10px 24px;
       background: #2c3e50;
@@ -39,59 +92,286 @@
       cursor: pointer;
     }
 
-    button:hover {
+    .btn:hover {
       background: #34495e;
     }
 
-    button:disabled {
+    .btn:disabled {
       background: #95a5a6;
       cursor: not-allowed;
     }
 
-    #output-box {
-      margin-top: 24px;
-      background: white;
+    .output-box {
+      margin-top: 20px;
+      background: #fafafa;
       border: 1px solid #ddd;
       border-radius: 6px;
       padding: 20px;
       white-space: pre-wrap;
       font-size: 14px;
       min-height: 100px;
+      max-height: 600px;
+      overflow-y: auto;
     }
 
-    #error {
-      color: red;
+    .error {
+      color: #e74c3c;
       margin-top: 10px;
     }
 
-    #status {
+    .status {
       color: #888;
       margin-top: 10px;
       font-style: italic;
+    }
+
+    /* ── Clause table ────────────────────────────── */
+    .clause-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 13px;
+    }
+
+    .clause-table th {
+      background: #2c3e50;
+      color: #fff;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .clause-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    .clause-table tr:hover {
+      background: #f5f7fa;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .badge.found {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .badge.not-found {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    /* ── Risk cards ────────────────────────────────── */
+    .risk-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .risk-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 24px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .risk-badge.red {
+      background: #e74c3c;
+    }
+
+    .risk-badge.yellow {
+      background: #f39c12;
+    }
+
+    .risk-badge.green {
+      background: #27ae60;
+    }
+
+    .risk-summary {
+      background: #f8f9fa;
+      border-left: 4px solid #2c3e50;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .risk-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: box-shadow 0.2s;
+    }
+
+    .risk-card:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .risk-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .severity-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .severity-badge.high {
+      background: #e74c3c;
+    }
+
+    .severity-badge.medium {
+      background: #f39c12;
+    }
+
+    .severity-badge.low {
+      background: #27ae60;
+    }
+
+    .risk-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: #2c3e50;
+    }
+
+    .risk-issue {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .risk-suggestion {
+      font-size: 13px;
+      color: #27ae60;
+      font-style: italic;
+      padding-left: 12px;
+      border-left: 3px solid #27ae60;
+    }
+
+    /* ── File input ───────────────────────────────── */
+    .file-area {
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      color: #888;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .file-area:hover {
+      border-color: #2c3e50;
+    }
+
+    .file-area input[type="file"] {
+      display: none;
+    }
+
+    .file-name {
+      margin-top: 8px;
+      font-weight: 600;
+      color: #2c3e50;
     }
   </style>
 </head>
 
 <body>
-  <h1>Legal Contract Generator</h1>
-  <p>Describe the contract you need and click <strong>Generate</strong>.</p>
+  <h1>⚖️ Legal Contract Tool</h1>
+  <p class="subtitle">Generate contracts or scan existing ones for risk assessment.</p>
 
-  <textarea id="description" placeholder="e.g. I want an NDA between Manish and Deepak for 2 years in India"></textarea>
-  <br />
-  <button id="btn" onclick="generate()">Generate Contract</button>
-  <div id="status"></div>
-  <div id="error"></div>
-  <div id="output-box">Your contract will appear here...</div>
+  <!-- ── Tabs ──────────────────────────────────────── -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('generate')">📝 Generate Contract</button>
+    <button class="tab-btn" onclick="switchTab('scan')">🔍 Scan & Risk Assessment</button>
+  </div>
+
+  <!-- ── Tab 1: Generate ──────────────────────────── -->
+  <div id="tab-generate" class="tab-content active">
+    <textarea id="description"
+      placeholder="e.g. I want an NDA between Manish and Deepak for 2 years in India"></textarea>
+    <br />
+    <button class="btn" id="gen-btn" onclick="generate()">Generate Contract</button>
+    <div class="status" id="gen-status"></div>
+    <div class="error" id="gen-error"></div>
+    <div class="output-box" id="gen-output">Your contract will appear here...</div>
+  </div>
+
+  <!-- ── Tab 2: Scan ──────────────────────────────── -->
+  <div id="tab-scan" class="tab-content">
+    <div class="file-area" id="drop-area" onclick="document.getElementById('file-input').click()">
+      <p>📄 Click or drag a contract file here</p>
+      <p style="font-size:12px; margin-top:4px;">Supports .pdf and .txt</p>
+      <input type="file" id="file-input" accept=".pdf,.txt" onchange="onFileSelected(this)" />
+      <div class="file-name" id="file-name"></div>
+    </div>
+    <button class="btn" id="scan-btn" onclick="scanContract()">Scan & Assess Risk</button>
+    <div class="status" id="scan-status"></div>
+    <div class="error" id="scan-error"></div>
+
+    <div id="clause-section" style="display:none;">
+      <h3 style="margin-top:20px; color:#2c3e50;">Extracted Clauses</h3>
+      <table class="clause-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Confidence</th>
+            <th>Extracted Text</th>
+          </tr>
+        </thead>
+        <tbody id="clause-body"></tbody>
+      </table>
+    </div>
+
+    <div id="risk-section" style="display:none;">
+      <h3 style="margin-top:24px; color:#2c3e50;">Risk Assessment Report</h3>
+      <div id="risk-output"></div>
+    </div>
+  </div>
 
   <script>
-    const API_URL = "http://localhost:8000/generate";
+    const API_BASE = "http://localhost:8000";
 
+    /* ── Tab switching ───────────────────────────── */
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach((b, i) => {
+        b.classList.toggle('active', (tab === 'generate' ? i === 0 : i === 1));
+      });
+      document.getElementById('tab-generate').classList.toggle('active', tab === 'generate');
+      document.getElementById('tab-scan').classList.toggle('active', tab === 'scan');
+    }
+
+    /* ── Generate Contract (existing) ────────────── */
     async function generate() {
       const description = document.getElementById("description").value.trim();
-      const outputBox = document.getElementById("output-box");
-      const errorDiv = document.getElementById("error");
-      const statusDiv = document.getElementById("status");
-      const btn = document.getElementById("btn");
+      const outputBox = document.getElementById("gen-output");
+      const errorDiv = document.getElementById("gen-error");
+      const statusDiv = document.getElementById("gen-status");
+      const btn = document.getElementById("gen-btn");
 
       errorDiv.textContent = "";
       outputBox.textContent = "";
@@ -106,7 +386,7 @@
       }
 
       try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(API_BASE + "/generate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ description })
@@ -118,7 +398,6 @@
           return;
         }
 
-        // Read the streamed plain-text response chunk by chunk
         statusDiv.textContent = "Generating contract...";
         const reader = response.body.getReader();
         const decoder = new TextDecoder("utf-8");
@@ -127,17 +406,148 @@
           const { done, value } = await reader.read();
           if (done) break;
           outputBox.textContent += decoder.decode(value, { stream: true });
-          // Auto-scroll to the bottom as text arrives
           outputBox.scrollTop = outputBox.scrollHeight;
         }
 
         statusDiv.textContent = "Done!";
-
       } catch (err) {
-        errorDiv.textContent = "Could not reach the API. Make sure the server is running on localhost:8000.";
+        errorDiv.textContent = "Could not reach the API. Make sure the server is running.";
       } finally {
         btn.disabled = false;
       }
+    }
+
+    /* ── File selection ──────────────────────────── */
+    function onFileSelected(input) {
+      const name = input.files[0]?.name || "";
+      document.getElementById("file-name").textContent = name ? `Selected: ${name}` : "";
+    }
+
+    /* ── Scan & Risk Assessment ──────────────────── */
+    async function scanContract() {
+      const fileInput = document.getElementById("file-input");
+      const errorDiv = document.getElementById("scan-error");
+      const statusDiv = document.getElementById("scan-status");
+      const btn = document.getElementById("scan-btn");
+      const clauseSection = document.getElementById("clause-section");
+      const riskSection = document.getElementById("risk-section");
+      const clauseBody = document.getElementById("clause-body");
+      const riskOutput = document.getElementById("risk-output");
+
+      errorDiv.textContent = "";
+      clauseBody.innerHTML = "";
+      riskOutput.innerHTML = "";
+      clauseSection.style.display = "none";
+      riskSection.style.display = "none";
+
+      if (!fileInput.files.length) {
+        errorDiv.textContent = "Please select a file first.";
+        return;
+      }
+
+      btn.disabled = true;
+      statusDiv.textContent = "Uploading and scanning contract (this may take 30-60s on first run)...";
+
+      const formData = new FormData();
+      formData.append("file", fileInput.files[0]);
+
+      try {
+        const response = await fetch(API_BASE + "/scan", {
+          method: "POST",
+          body: formData
+        });
+
+        if (!response.ok) {
+          const err = await response.json();
+          errorDiv.textContent = "Error: " + (err.detail || "Something went wrong.");
+          btn.disabled = false;
+          statusDiv.textContent = "";
+          return;
+        }
+
+        const data = await response.json();
+
+        // Render clauses table
+        if (data.clauses) {
+          renderClauses(data.clauses);
+          clauseSection.style.display = "block";
+        }
+
+        // Render structured risk report
+        if (data.risk) {
+          renderRiskJSON(data.risk);
+          riskSection.style.display = "block";
+        }
+
+        statusDiv.textContent = "Done!";
+      } catch (err) {
+        errorDiv.textContent = "Could not reach the API. Make sure the server is running.";
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function renderClauses(clauses) {
+      const tbody = document.getElementById("clause-body");
+      for (const [cat, info] of Object.entries(clauses)) {
+        const tr = document.createElement("tr");
+        const found = info.found;
+        tr.innerHTML = `
+          <td><strong>${escapeHtml(cat)}</strong></td>
+          <td><span class="badge ${found ? 'found' : 'not-found'}">${found ? 'Found' : 'Not Found'}</span></td>
+          <td>${(info.score * 100).toFixed(1)}%</td>
+          <td>${found ? escapeHtml(info.answer.substring(0, 200)) + (info.answer.length > 200 ? '…' : '') : '—'}</td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+
+    function renderRiskJSON(risk) {
+      const container = document.getElementById("risk-output");
+      container.innerHTML = "";
+
+      // Overall risk badge + summary
+      const level = (risk.overallRisk || "Yellow").toLowerCase();
+      const emoji = level === "red" ? "🔴" : level === "green" ? "🟢" : "🟡";
+
+      const header = document.createElement("div");
+      header.className = "risk-header";
+      header.innerHTML = `
+        <span class="risk-badge ${level}">${emoji} ${escapeHtml(risk.overallRisk || "Unknown")}</span>
+      `;
+      container.appendChild(header);
+
+      if (risk.summary) {
+        const summary = document.createElement("div");
+        summary.className = "risk-summary";
+        summary.textContent = risk.summary;
+        container.appendChild(summary);
+      }
+
+      // Individual risk cards
+      if (risk.risks && risk.risks.length) {
+        for (const r of risk.risks) {
+          const card = document.createElement("div");
+          card.className = "risk-card";
+
+          const sevLevel = (r.severity || "Medium").toLowerCase();
+          card.innerHTML = `
+            <div class="risk-card-header">
+              <span class="severity-badge ${sevLevel}">${escapeHtml(r.severity || "Medium")}</span>
+              <span class="risk-title">${escapeHtml(r.title || "Untitled Risk")}</span>
+            </div>
+            <div class="risk-issue">${escapeHtml(r.issue || "")}</div>
+            <div class="risk-suggestion">💡 ${escapeHtml(r.suggestion || "")}</div>
+          `;
+          container.appendChild(card);
+        }
+      }
+    }
+
+    function escapeHtml(s) {
+      const d = document.createElement("div");
+      d.textContent = s;
+      return d.innerHTML;
     }
   </script>
 </body>
